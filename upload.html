@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files - Soundtrack Mixer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #ff6600;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        input[type="file"] {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #e65c00;
+        }
+        a {
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="booknow.html">Book Now</a>
+        <a href="upload.html">Upload Files</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Upload Your Sound File</h1>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="soundfile" accept="audio/*">
+            <button type="submit">Upload</button>
+        </form>
+        <a href="home.html">Back to Home</a>
+    </div>
+</body>
+</html>
