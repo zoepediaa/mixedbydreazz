@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a professional mixing and mastering service for your track. High-quality results at an affordable price.">
+    <meta property="og:title" content="Mix & Master Package - Book Now">
+    <meta property="og:description" content="Get your track professionally mixed and mastered for only $100. Book an appointment now.">
+    <meta property="og:image" content="your-image-url.jpg">
+    <meta property="og:type" content="website">
     <title>Mix - Book Now</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #1e1e1e;
-            color: white;
+            background-color: #000;
+            color: #fff;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -19,12 +24,12 @@
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
         }
         button {
-            background-color: #ff6600;
-            color: white;
-            border: none;
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #fff;
             padding: 10px 20px;
             cursor: pointer;
             font-size: 16px;
@@ -32,7 +37,21 @@
             transition: 0.3s;
         }
         button:hover {
-            background-color: #e65c00;
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #fff;
+            transform: scale(1.05);
+        }
+        a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 2px;
+        }
+        a:hover {
+            color: #ccc;
+            border-bottom: 2px solid #ccc;
         }
     </style>
 </head>
@@ -41,9 +60,9 @@
         <h1>Mix & Master Package</h1>
         <p>Get professional mixing for your track.</p>
         <p>Price: $100</p>
-        <button onclick="window.location.href='payment.html'">Book Appointment</button>
+        <button onclick="window.location.href='booking.html'" aria-label="Book an appointment for mixing and mastering">Book Appointment</button>
         <br><br>
-        <a href="booknow.html" style="color: #ff6600; font-weight: bold;">Back to Booking</a>
+        <a href="booknow.html">Back to Booking</a>
     </div>
 </body>
 </html>
