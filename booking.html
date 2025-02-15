@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Appointment</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 50px auto;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #000;
+            color: #fff;
+            border: 2px solid #fff;
+            transform: scale(1.05);
+        }
+        a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 2px;
+        }
+        a:hover {
+            color: #ccc;
+            border-bottom: 2px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Your Appointment</h1>
+        <form id="bookingForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" required>
+
+            <button type="submit">Confirm Booking</button>
+        </form>
+        <br>
+        <a href="index.html">Back</a>
+    </div>
+
+    <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let date = document.getElementById("date").value;
+            let time = document.getElementById("time").value;
+
+            if (name && email && date && time) {
+                sendEmail(name, email, date, time);
+                alert("Booking Confirmed! You will receive a confirmation email.");
+                window.location.href = "index.html";
+            } else {
+                alert("Please fill out all fields.");
+            }
+        });
+
+        function sendEmail(name, email, date, time) {
+            let ownerEmail = "your-email@example.com"; // Replace with your actual email
+
+            let mailtoLink = `mailto:${ownerEmail}?subject=New Appointment Booking&body=
+                New booking confirmed!%0A
+                Name: ${name}%0A
+                Email: ${email}%0A
+                Date: ${date}%0A
+                Time: ${time}%0A
+                Please check and confirm.`;
+
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
