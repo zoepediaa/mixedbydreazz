@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Appointment</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -80,6 +81,10 @@
     </div>
 
     <script>
+        (function() {
+            emailjs.init("8OzY5TBiF3Ri3dxq6"); // Replace with your EmailJS Public Key
+        })();
+
         document.getElementById("bookingForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
@@ -90,25 +95,27 @@
 
             if (name && email && date && time) {
                 sendEmail(name, email, date, time);
-                alert("Booking Confirmed! You will receive a confirmation email.");
-                window.location.href = "index.html";
             } else {
                 alert("Please fill out all fields.");
             }
         });
 
         function sendEmail(name, email, date, time) {
-            let ownerEmail = "your-email@example.com"; // Replace with your actual email
+            let templateParams = {
+                user_name: name,
+                user_email: email,
+                appointment_date: date,
+                appointment_time: time
+            };
 
-            let mailtoLink = `mailto:${ownerEmail}?subject=New Appointment Booking&body=
-                New booking confirmed!%0A
-                Name: ${name}%0A
-                Email: ${email}%0A
-                Date: ${date}%0A
-                Time: ${time}%0A
-                Please check and confirm.`;
-
-            window.location.href = mailtoLink;
+            emailjs.send("service_jzga3ph", "template_u8qq4l8", templateParams)
+                .then(function(response) {
+                    alert("Booking Confirmed! You will receive a confirmation email.");
+                    window.location.href = "index.html";
+                }, function(error) {
+                    alert("Error sending email. Please try again.");
+                    console.log("EmailJS Error:", error);
+                });
         }
     </script>
 </body>
