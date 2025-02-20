@@ -1,122 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Appointment</title>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("8OzY5TBiF3Ri3dxq6"); // Replace with your EmailJS Public Key
+    })();
+
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let date = document.getElementById("date").value;
+        let time = document.getElementById("time").value;
+
+        if (!name || !email || !date || !time) {
+            alert("Please fill out all fields.");
+            return;
         }
-        .container {
-            margin: 50px auto;
-            max-width: 600px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
-        }
-        button {
-            background-color: #fff;
-            color: #000;
-            border: 2px solid #fff;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        button:hover {
-            background-color: #000;
-            color: #fff;
-            border: 2px solid #fff;
-            transform: scale(1.05);
-        }
-        a {
-            color: #fff;
-            font-weight: bold;
-            text-decoration: none;
-            border-bottom: 2px solid white;
-            padding-bottom: 2px;
-        }
-        a:hover {
-            color: #ccc;
-            border-bottom: 2px solid #ccc;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Book Your Appointment</h1>
-        <form id="bookingForm">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" required>
 
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" required>
-
-            <label for="date">Select Date:</label>
-            <input type="date" id="date" required>
-
-            <label for="time">Select Time:</label>
-            <input type="time" id="time" required>
-
-            <button type="submit">Confirm Booking</button>
-        </form>
-        <br>
-        <a href="index.html">Back</a>
-    </div>
-
-    <script>
-        (function() {
-            emailjs.init("8OzY5TBiF3Ri3dxq6"); // Replace with your EmailJS Public Key
-        })();
-
-        document.getElementById("bookingForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let date = document.getElementById("date").value;
-            let time = document.getElementById("time").value;
-
-            if (name && email && date && time) {
-                sendEmail(name, email, date, time);
-            } else {
-                alert("Please fill out all fields.");
-            }
+        // 📩 Send email to Admin
+        emailjs.send("service_jzga3ph", "template_u8qq4l8" {
+            user_name: name,
+            user_email: email,
+            appointment_date: date,
+            appointment_time: time
+        }).then(function(response) {
+            console.log("Admin Email Sent Successfully", response);
+        }, function(error) {
+            console.error("Error sending admin email:", error);
         });
 
-        function sendEmail(name, email, date, time) {
-            let templateParams = {
-                user_name: name,
-                user_email: email,
-                appointment_date: date,
-                appointment_time: time
-            };
-
-            emailjs.send("service_jzga3ph", "template_u8qq4l8", templateParams)
-                .then(function(response) {
-                    alert("Booking Confirmed! You will receive a confirmation email.");
-                    window.location.href = "index.html";
-                }, function(error) {
-                    alert("Error sending email. Please try again.");
-                    console.log("EmailJS Error:", error);
-                });
-        }
-    </script>
-</body>
-</html>
+        // 📩 Send confirmation email to Customer
+        emailjs.send("service_jzga3ph", "template_gq6i4ik", {
+            user_name: name,
+            user_email: email,
+            appointment_date: date,
+            appointment_time: time
+        }).then(function(response) {
+            alert("Booking Confirmed! A confirmation email has been sent to you.");
+            window.location.href = "success.html";
+        }, function(error) {
+            alert("Error sending confirmation email. Please try again.");
+            console.error("Error sending customer email:", error);
+        });
+    });
+</script>
