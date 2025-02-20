@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Appointment</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -15,11 +16,11 @@
         }
         .container {
             margin: 50px auto;
-            max-width: 600px;
+            max-width: 800px;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
         }
         input {
             width: 100%;
@@ -27,16 +28,22 @@
             margin: 10px 0;
             border-radius: 5px;
             border: none;
+            background: #222;
+            color: #fff;
+        }
+        input:focus {
+            outline: 2px solid #fff;
         }
         button {
             background-color: #fff;
             color: #000;
             border: 2px solid #fff;
-            padding: 10px 20px;
+            padding: 12px 20px;
             cursor: pointer;
             font-size: 16px;
             border-radius: 5px;
             transition: 0.3s;
+            font-weight: bold;
         }
         button:hover {
             background-color: #000;
@@ -45,62 +52,102 @@
             transform: scale(1.05);
         }
         a {
-            color: #fff;
+            color: #ff6600;
             font-weight: bold;
             text-decoration: none;
-            border-bottom: 2px solid white;
-            padding-bottom: 2px;
         }
         a:hover {
-            color: #ccc;
-            border-bottom: 2px solid #ccc;
+            color: #e65c00;
+        }
+        .confirmation-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #00ff00;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Book Your Appointment</h1>
+        <h1>Mix & Master Package</h1>
+        <p>Get professional mixing for your track.</p>
+        <p>Price: $100</p>
 
-        <!-- Customer Confirmation Email Form -->
-        <form action="https://api.emailjs.com/api/v1.0/email/send-form" method="POST">
-            <!-- EmailJS Public Key -->
-            <input type="hidden" name="user_id" value="8OzY5TBiF3Ri3dxq6">
+        <h2>Book Your Appointment</h2>
 
-            <!-- Service ID from EmailJS -->
-            <input type="hidden" name="service_id" value="service_jzga3ph">
-
-            <!-- Template ID for Customer Email -->
-            <input type="hidden" name="template_id" value="template_gq6i4ik">
-
+        <form id="bookingForm">
             <label for="name">Your Name:</label>
-            <input type="text" name="user_name" required>
+            <input type="text" id="name" required>
 
             <label for="email">Your Email:</label>
-            <input type="email" name="user_email" required>
+            <input type="email" id="email" required>
 
             <label for="date">Select Date:</label>
-            <input type="date" name="appointment_date" required>
+            <input type="date" id="date" required>
 
             <label for="time">Select Time:</label>
-            <input type="time" name="appointment_time" required>
+            <input type="time" id="time" required>
 
             <button type="submit">Confirm Booking</button>
         </form>
 
-        <!-- Admin Notification Email Form -->
-        <form action="https://api.emailjs.com/api/v1.0/email/send-form" method="POST">
-            <input type="hidden" name="user_id" value="8OzY5TBiF3Ri3dxq6">
-            <input type="hidden" name="service_id" value="service_jzga3ph">
-            <input type="hidden" name="template_id" value="template_u8qq4l8">
-
-            <input type="hidden" name="user_name" value="{{user_name}}">
-            <input type="hidden" name="user_email" value="{{user_email}}">
-            <input type="hidden" name="appointment_date" value="{{appointment_date}}">
-            <input type="hidden" name="appointment_time" value="{{appointment_time}}">
-        </form>
+        <!-- Confirmation Message (Hidden by Default) -->
+        <p id="confirmationMessage" class="confirmation-message">Your booking has been confirmed! 🎉</p>
 
         <br>
-        <a href="index.html">Back</a>
+        <a href="index.html">Back to Booking</a>
     </div>
+
+    <script>
+        (function() {
+            emailjs.init("8OzY5TBiF3Ri3dxq6"); // Replace with your EmailJS Public Key
+        })();
+
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let date = document.getElementById("date").value;
+            let time = document.getElementById("time").value;
+
+            if (!name || !email || !date || !time) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            // Email Data
+            let templateParams = {
+                user_name: name,
+                user_email: email,
+                appointment_date: date,
+                appointment_time: time
+            };
+
+            // Send Confirmation Email to Customer
+            emailjs.send("service_jzga3ph", "template_gq6i4ik", templateParams)
+                .then(function(response) {
+                    console.log("Customer Email Sent Successfully", response);
+                }, function(error) {
+                    console.error("Error sending customer email:", error);
+                });
+
+            // Send Email to Admin
+            emailjs.send("service_jzga3ph", "template_u8qq4l8", templateParams)
+                .then(function(response) {
+                    console.log("Admin Email Sent Successfully", response);
+                }, function(error) {
+                    console.error("Error sending admin email:", error);
+                });
+
+            // Show Confirmation Message
+            document.getElementById("confirmationMessage").style.display = "block";
+
+            // Clear Form Fields
+            document.getElementById("bookingForm").reset();
+        });
+    </script>
 </body>
 </html>
+
