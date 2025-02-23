@@ -3,81 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Files - Soundtrack Mixer</title>
+    <title>Upload Files - Mixed by Dre</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #1e1e1e;
-            color: white;
-            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #000;
             margin: 0;
             padding: 0;
-        }
-        nav {
-            background-color: #ff6600;
-            padding: 15px;
+            overflow-x: hidden;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
         }
+
+        /* Modern Navigation Bar */
+        nav {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
-            transition: 0.3s;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: 0.3s ease;
         }
+
         nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            margin: 50px auto;
-            max-width: 600px;
-            padding: 20px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        input[type="file"] {
-            margin: 20px 0;
+
+        nav a.disabled {
+            color: #aaa;
+            cursor: default;
+            pointer-events: none;
         }
-        button {
-            background-color: #ff6600;
-            color: white;
-            border: none;
-            padding: 10px 20px;
+
+        .container {
+            margin: 120px auto 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        /* DJ Mixing Image as Interactive Upload Button */
+        .dj-animation {
+            width: 250px;
+            height: 250px;
+            background: url('/mnt/data/A_very_simple,_minimalistic_hand-drawn_DJ_in_black.png') no-repeat center center/cover;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
             cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
+        }
+
+        .dj-animation:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animation Effect on Click */
+        .dj-animation:active {
+            transform: translateY(-500px);
+            opacity: 0;
+            transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid #000;
+            padding-bottom: 2px;
             transition: 0.3s;
         }
-        button:hover {
-            background-color: #e65c00;
+
+        .back-link:hover {
+            color: #444;
+            border-bottom: 2px solid #444;
         }
-        a {
-            color: #ff6600;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .dj-animation {
+                width: 200px;
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body>
+
     <nav>
         <a href="home.html">Home</a>
         <a href="booknow.html">Book Now</a>
-        <a href="upload.html">Upload Files</a>
+        <a href="#" class="disabled">Upload Files</a>
+        <a href="about.html">About</a>
     </nav>
     
     <div class="container">
         <h1>Upload Your Sound File</h1>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="soundfile" accept="audio/*">
-            <button type="submit">Upload</button>
-        </form>
-        <a href="home.html">Back to Home</a>
+        
+        <!-- DJ Mixing Animation - Click to Open Email Draft -->
+        <div class="dj-animation" onclick="sendEmail()"></div>
+
+        <a href="home.html" class="back-link">Back to Home</a>
     </div>
+
+    <script>
+        function sendEmail() {
+            window.location.href = "mailto:musicisthearpy08@gmail.com?subject=File Submission&body=Attach your files here.";
+        }
+    </script>
+
 </body>
 </html>
