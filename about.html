@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Mixedbydreazz</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Background Image Styling */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Add a heading.png') no-repeat center center/cover;
+            filter: brightness(0.2) grayscale(20%);
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        /* Modern Navigation Bar */
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Disable current page tab */
+        nav a.disabled {
+            color: #aaa;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .container {
+            margin: 100px auto 50px;
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 2px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #bbb;
+            border-bottom: 2px solid #bbb;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="book.html">Book Now</a>
+        <a href="upload.html">Upload Files</a>
+        <a href="#" class="disabled">About</a>
+    </nav>
+    
+    <div class="container">
+        <h1>About Mixedbydreazz</h1>
+        <p>Welcome to <strong>Mixedbydreazz.com</strong>, where passion meets precision in music production.  
+           Music is an art form that evokes different emotions—some tracks feel perfect, while others lack that final touch.  
+           This is where the art of **mixing and mastering** becomes crucial. Many underestimate the intricate process behind refining a song to its fullest potential.</p>
+
+        <p>With a deep understanding of sound engineering, I utilize cutting-edge technology and expertise to elevate your tracks.  
+           Whether it's fine-tuning frequencies, achieving balanced dynamics, or perfecting stereo imaging, my goal is to bring your music to industry-standard excellence.</p>
+
+        <p>My name is <strong>Andreazz</strong>, and I am a dedicated audio engineer and music producer.  
+           My mission is to provide **top-tier professional services** to artists, producers, and fellow engineers, ensuring that every project receives the quality it deserves.</p>
+
+        <a href="home.html" class="back-link">Back to Home</a>
+    </div>
+
+</body>
+</html>
