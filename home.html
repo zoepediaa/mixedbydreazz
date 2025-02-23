@@ -57,7 +57,7 @@
         }
 
         .container {
-            margin: 100px auto 50px;
+            margin: 120px auto 50px;
             text-align: center;
             position: relative;
         }
@@ -67,28 +67,28 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 40px;
-            margin-top: -20px; /* Move text slightly up */
+            margin-bottom: 50px;
+            margin-top: -30px; /* Move text slightly up */
         }
 
-        /* Floating Rectangle Image Placeholder */
+        /* Large White Floating Rectangle with Sharp Edges */
         .floating-box {
-            width: 600px;
-            height: 300px;
-            background: rgba(0, 0, 0, 0.1);
+            width: 800px;
+            height: 400px;
+            background: #fff;
+            border: 2px solid #000;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             margin: 20px auto;
             transition: transform 0.5s ease-in-out;
-            border-radius: 12px;
-            animation: float 3s ease-in-out infinite alternate;
+            animation: float 2.5s ease-in-out infinite alternate;
         }
 
         @keyframes float {
             0% {
-                transform: translateX(-30px);
+                transform: translateX(-40px);
             }
             100% {
-                transform: translateX(30px);
+                transform: translateX(40px);
             }
         }
 
@@ -96,7 +96,7 @@
         @media screen and (max-width: 768px) {
             .floating-box {
                 width: 90%;
-                height: 200px;
+                height: 250px;
             }
 
             h1 {
@@ -110,7 +110,7 @@
 
     <nav>
         <a href="#" class="disabled">Home</a>
-        <a href="booknow.html">Book Now</a>
+        <a href="book.html">Book Now</a>
         <a href="upload.html">Upload Files</a>
         <a href="about.html">About</a>
     </nav>
@@ -118,7 +118,7 @@
     <div class="container">
         <h1>Welcome to Mixedbydreazz</h1>
         
-        <!-- Floating Wide Rectangle -->
+        <!-- Large White Floating Rectangle -->
         <div class="floating-box"></div>
         <!-- Replace with actual image by setting the background-image property in CSS -->
     </div>
