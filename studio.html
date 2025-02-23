@@ -3,66 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Book a professional mixing and mastering service for your track. High-quality results at an affordable price.">
-    <meta property="og:title" content="Mix & Master Package - Book Now">
-    <meta property="og:description" content="Get your track professionally mixed and mastered for only $100. Book an appointment now.">
-    <meta property="og:image" content="your-image-url.jpg">
-    <meta property="og:type" content="website">
-    <title>Mix - Book Now</title>
+    <title>Studio Session - Book Now</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            margin: 50px auto;
-            max-width: 800px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-        }
-        button {
+            font-family: 'Poppins', sans-serif;
             background-color: #fff;
             color: #000;
-            border: 2px solid #fff;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: 0.3s;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        button:hover {
-            background-color: #000;
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            background: #f8f8f8;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: 0.3s ease-in-out;
+        }
+
+        .header-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        button {
+            background: #000;
             color: #fff;
-            border: 2px solid #fff;
+            border: none;
+            padding: 14px 30px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #333;
             transform: scale(1.05);
         }
+
         a {
-            color: #fff;
-            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            color: #000;
+            font-weight: 600;
             text-decoration: none;
-            border-bottom: 2px solid white;
             padding-bottom: 2px;
+            border-bottom: 2px solid #000;
+            transition: 0.3s;
         }
+
         a:hover {
-            color: #ccc;
-            border-bottom: 2px solid #ccc;
+            color: #555;
+            border-bottom: 2px solid #555;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 30px;
+            }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
+        <img src="IMG_7818.png" alt="Studio Session" class="header-img">
+
         <h1>Studio Session</h1>
-        <p>3 Hour session for recording vocals in a recording studio. Record your best sound with high-quality equipment, with mixdbydreazz engineering.</p>
-        <p>Price: $100/3 hours</p>
-        <button onclick="window.location.href='booking.html'" aria-label="Book an appointment for mixing and mastering">Book Appointment</button>
+        <p>3 Hour studio session for recording vocals in a recording studio. Record your best sound with high-quality equipment, with mixedbydreazz engineering.</p>
+        <p><strong>Price:</strong> $100 / 3 hours</p>
+
+        <button onclick="window.location.href='booking.html'" aria-label="Book an appointment">Book Appointment</button>
+
         <br><br>
+
+        <button onclick="window.location.href='payment.html'" aria-label="Proceed to Payment">Pay Now - $100</button>
+
+        <br>
         <a href="booknow.html">Back to Booking</a>
     </div>
+
 </body>
 </html>
+
