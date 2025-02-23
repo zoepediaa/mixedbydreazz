@@ -11,12 +11,12 @@
     <title>Mix & Master Package</title>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
         body {
-            font-family: 'Orbitron', sans-serif;
-            background-color: #000;
-            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #000;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -29,11 +29,11 @@
             justify-content: center;
             max-width: 1200px;
             margin: 50px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-            animation: fadeIn 1s ease-in-out;
+            padding: 40px;
+            background: #f8f8f8;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease-in-out;
         }
 
         .image-section {
@@ -42,96 +42,74 @@
         }
 
         .header-img {
-            width: 90%;
+            width: 100%;
             max-width: 500px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-            animation: pulse 2s infinite;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .content-section {
             flex: 1;
-            padding: 20px;
+            padding: 20px 40px;
             text-align: left;
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 32px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, #0ff, #00f, #f0f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 1.5s infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 10px #0ff; }
-            to { text-shadow: 0 0 20px #00f; }
+            letter-spacing: 1px;
         }
 
         .description {
             font-size: 18px;
             margin: 15px 0;
-            color: #ddd;
+            color: #333;
             line-height: 1.6;
         }
 
         .package-details {
             font-size: 16px;
             margin: 20px 0;
-            color: #fff;
-            background: rgba(0, 255, 255, 0.1);
-            padding: 15px;
+            color: #444;
+            background: #fff;
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         button {
-            background: linear-gradient(90deg, #00ffea, #0077ff);
-            color: #000;
+            background: #000;
+            color: #fff;
             border: none;
-            padding: 12px 25px;
+            padding: 14px 30px;
             cursor: pointer;
             font-size: 18px;
             font-weight: bold;
             text-transform: uppercase;
             border-radius: 8px;
-            transition: 0.3s;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
         }
 
         button:hover {
-            background: linear-gradient(90deg, #00f, #ff00ff);
-            color: #fff;
+            background: #333;
             transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
-            100% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); }
         }
 
         a {
-            color: #00ffee;
-            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            color: #000;
+            font-weight: 600;
             text-decoration: none;
-            border-bottom: 2px solid #00ffee;
             padding-bottom: 2px;
+            border-bottom: 2px solid #000;
             transition: 0.3s;
         }
 
         a:hover {
-            color: #ff00ff;
-            border-bottom: 2px solid #ff00ff;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            color: #555;
+            border-bottom: 2px solid #555;
         }
 
         /* Responsive Design */
@@ -139,9 +117,11 @@
             .container {
                 flex-direction: column;
                 text-align: center;
+                padding: 20px;
             }
             .content-section {
                 text-align: center;
+                padding: 20px;
             }
         }
 
@@ -152,7 +132,7 @@
     <div class="container">
         <!-- Left: Image Section -->
         <div class="image-section">
-            <img src="IMG_8526.png" alt="Mix & Master Package" class="header-img">
+            <img src="IMG_8526".png" alt="Mix & Master Package" class="header-img">
         </div>
 
         <!-- Right: Content Section -->
