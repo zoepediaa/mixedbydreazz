@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Mixed by Dre</title>
+    <title>Home - Mixedbydreazz</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -19,6 +19,7 @@
             align-items: center;
             min-height: 100vh;
             flex-direction: column;
+            position: relative;
         }
 
         /* Modern Navigation Bar */
@@ -56,42 +57,51 @@
         }
 
         .container {
-            margin: 120px auto 50px;
+            margin: 100px auto 50px;
             text-align: center;
+            position: relative;
         }
 
         h1 {
-            font-size: 36px;
-            font-weight: 600;
+            font-size: 42px;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            margin-top: -20px; /* Move text slightly up */
         }
 
-        /* Floating Wide Rectangle Image Placeholder */
-        .floating-image {
+        /* Floating Rectangle Image Placeholder */
+        .floating-box {
             width: 600px;
             height: 300px;
-            background: url('your-image.jpg') no-repeat center center/cover;
+            background: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            transition: transform 0.5s ease-in-out;
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            animation: float 4s ease-in-out infinite alternate;
+            animation: float 3s ease-in-out infinite alternate;
         }
 
         @keyframes float {
             0% {
-                transform: translateX(-10px);
+                transform: translateX(-30px);
             }
             100% {
-                transform: translateX(10px);
+                transform: translateX(30px);
             }
         }
 
         /* Responsive Design */
         @media screen and (max-width: 768px) {
-            .floating-image {
+            .floating-box {
                 width: 90%;
                 height: 200px;
+            }
+
+            h1 {
+                font-size: 32px;
+                margin-top: -10px;
             }
         }
     </style>
@@ -108,9 +118,9 @@
     <div class="container">
         <h1>Welcome to Mixedbydreazz</h1>
         
-        <!-- Floating Wide Rectangle Image -->
-        <div class="floating-image"></div>
-        <!-- Replace 'your-image.jpg' with your actual image path -->
+        <!-- Floating Wide Rectangle -->
+        <div class="floating-box"></div>
+        <!-- Replace with actual image by setting the background-image property in CSS -->
     </div>
 
 </body>
