@@ -3,64 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Soundtrack Mixer</title>
+    <title>Home - Mixedbydreazz</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #1e1e1e;
-            color: white;
-            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #000;
             margin: 0;
             padding: 0;
-        }
-        nav {
-            background-color: #ff6600;
-            padding: 15px;
+            overflow-x: hidden;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            align-items: center;
+            min-height: 100vh;
         }
+
+        /* Modern Navigation Bar */
+        nav {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            margin: 100px auto 50px;
+            max-width: 900px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Placeholder for Hover Bubble Image */
+        .image-hover {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-hover:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid #000;
+            padding-bottom: 2px;
             transition: 0.3s;
         }
-        nav a:hover {
-            text-decoration: underline;
+
+        .back-link:hover {
+            color: #444;
+            border-bottom: 2px solid #444;
         }
-        .container {
-            margin: 50px auto;
-            max-width: 800px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        a {
-            color: #ff6600;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
+
     <nav>
-        <a href="home.html">Home</a>
-        <a href="booknow.html">Book Now</a>
+        <a href="#" class="disabled">Home</a>
+        <a href="book.html">Book Now</a>
         <a href="upload.html">Upload Files</a>
+        <a href="about.html">About</a>
     </nav>
     
     <div class="container">
-        <h1>Welcome to Soundtrack Mixer</h1>
-        <p>Your destination for professional audio mixing and mastering.</p>
-        <a href="book.html">Book a Session</a> | <a href="upload.html">Upload Your Tracks</a>
+        <h1>Welcome to Mixedbydreazz</h1>
+        <p>Where creativity meets precision. Whether you're looking for **mixing**, **mastering**, or a **professional studio session**, we provide top-tier audio engineering to elevate your sound.</p>
+        
+        <!-- Placeholder for Hover Bubble Image -->
+        <div class="image-hover"></div>
+        <!-- Add an actual image by setting the background-image property in CSS -->
+
+        <p>Explore our services and take your music to the next level.</p>
+
+        <a href="book.html" class="back-link">Book a Session</a>
     </div>
+
 </body>
-</html>
+</html
 
 
