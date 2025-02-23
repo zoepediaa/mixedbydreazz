@@ -3,66 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Book a professional mixing and mastering service for your track. High-quality results at an affordable price.">
-    <meta property="og:title" content="Mix & Master Package - Book Now">
-    <meta property="og:description" content="Get your track professionally mixed and mastered for only $100. Book an appointment now.">
+    <meta name="description" content="Get your track professionally mixed and mastered. High-quality results at an affordable price.">
+    <meta property="og:title" content="Mix & Master Package - Professional Audio Services">
+    <meta property="og:description" content="Get your music professionally mixed & mastered with high-quality audio, fast delivery, and industry-standard results.">
     <meta property="og:image" content="your-image-url.jpg">
     <meta property="og:type" content="website">
-    <title>Mix - Book Now</title>
+    <title>Mix & Master Package</title>
+    
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             background-color: #000;
             color: #fff;
             text-align: center;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
+
         .container {
             margin: 50px auto;
             max-width: 800px;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .header-img {
+            width: 100%;
+            max-width: 600px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            animation: pulse 2s infinite;
         }
-        button {
-            background-color: #fff;
-            color: #000;
-            border: 2px solid #fff;
-            padding: 10px 20px;
-            cursor: pointer;
+
+        h1 {
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #0ff, #00f, #f0f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #0ff; }
+            to { text-shadow: 0 0 20px #00f; }
+        }
+
+        .description {
+            font-size: 18px;
+            margin: 15px 0;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .package-details {
             font-size: 16px;
-            border-radius: 5px;
+            margin: 20px 0;
+            color: #fff;
+            background: rgba(0, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+
+        button {
+            background: linear-gradient(90deg, #00ffea, #0077ff);
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 8px;
             transition: 0.3s;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            animation: pulse 2s infinite;
         }
+
         button:hover {
-            background-color: #000;
+            background: linear-gradient(90deg, #00f, #ff00ff);
             color: #fff;
-            border: 2px solid #fff;
             transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
         }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); }
+        }
+
         a {
-            color: #fff;
+            color: #00ffee;
             font-weight: bold;
             text-decoration: none;
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid #00ffee;
             padding-bottom: 2px;
+            transition: 0.3s;
         }
+
         a:hover {
-            color: #ccc;
-            border-bottom: 2px solid #ccc;
+            color: #ff00ff;
+            border-bottom: 2px solid #ff00ff;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
     </style>
 </head>
 <body>
+
     <div class="container">
+        <img src="IMG_8526.png" alt="Mix & Master Package" class="header-img">
+        
         <h1>Mix & Master Package</h1>
-        <p>Get professional mixing for your track.</p>
-        <p>Price: $100</p>
-        <button onclick="window.location.href='booking.html'" aria-label="Book an appointment for mixing and mastering">Book Appointment</button>
+        <p class="description">Get your track professionally mixed and mastered with high-quality results at an affordable price.</p>
+        
+        <div class="package-details">
+            <p><strong>Includes:</strong></p>
+            <p>🎵 HQ Audio File • WAV • MP3</p>
+            <p>🎛️ Mixing & Mastering</p>
+            <p>🔄 Revisions: 1</p>
+            <p>⏳ Delivery Time:</p>
+            <p>[1 Song] • 2 - 3 Days</p>
+            <p>[5 Songs] • 2 - 5 Days</p>
+            <p>[10 Songs] • 2 - 7 Days</p>
+            <p>🚚 <strong>Delivery Policy:</strong> Sundays Excluded</p>
+        </div>
+
+        <button onclick="window.location.href='https://buy.stripe.com/test_xyz123abc'" aria-label="Proceed to Payment">Pay Now - $100</button>
+
         <br><br>
         <a href="booknow.html">Back to Booking</a>
     </div>
+
 </body>
 </html>
