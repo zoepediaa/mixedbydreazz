@@ -103,7 +103,8 @@
             color: #008000;
         }
 
-        a {
+        /* Back to Home Button */
+        .back-link {
             display: inline-block;
             margin-top: 20px;
             color: #000;
@@ -112,9 +113,10 @@
             padding-bottom: 2px;
             border-bottom: 2px solid #000;
             transition: 0.3s;
+            cursor: pointer;
         }
 
-        a:hover {
+        .back-link:hover {
             color: #555;
             border-bottom: 2px solid #555;
         }
@@ -157,7 +159,7 @@
         <p id="confirmationMessage" class="confirmation-message">Your booking has been confirmed! 🎉</p>
 
         <br>
-        <a href="home.html">Back to Home</a>
+        <a href="home.html" class="back-link" onclick="goHome(event)">Back to Home</a>
     </div>
 
     <script>
@@ -173,5 +175,47 @@
             let date = document.getElementById("date").value;
             let time = document.getElementById("time").value;
 
-            if (!name || !email ||
+            if (!name || !email || !date || !time) {
+                alert("Please fill out all fields.");
+                return;
+            }
 
+            // Email Data
+            let templateParams = {
+                user_name: name,
+                user_email: email,
+                appointment_date: date,
+                appointment_time: time
+            };
+
+            // Send Confirmation Email to Customer
+            emailjs.send("service_jzga3ph", "template_gq6i4ik", templateParams)
+                .then(function(response) {
+                    console.log("Customer Email Sent Successfully", response);
+                }, function(error) {
+                    console.error("Error sending customer email:", error);
+                });
+
+            // Send Email to Admin
+            emailjs.send("service_jzga3ph", "template_u8qq4l8", templateParams)
+                .then(function(response) {
+                    console.log("Admin Email Sent Successfully", response);
+                }, function(error) {
+                    console.error("Error sending admin email:", error);
+                });
+
+            // Show Confirmation Message
+            document.getElementById("confirmationMessage").style.display = "block";
+
+            // Clear Form Fields
+            document.getElementById("bookingForm").reset();
+        });
+
+        function goHome(event) {
+            event.preventDefault();
+            window.location.href = "home.html"; // Ensure this matches your actual home page URL
+        }
+    </script>
+
+</body>
+</html>
