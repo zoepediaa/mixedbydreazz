@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Mixedbydreazz</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             background-color: #fff;
             color: black;
             margin: 0;
@@ -83,9 +83,9 @@
             margin-bottom: 20px;
         }
 
-        /* New Stylish Font for Description */
+        /* Futuristic Font for Description */
         p {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 18px;
             color: #333;
             line-height: 1.8;
@@ -123,15 +123,23 @@
             pointer-events: none;
         }
 
-        .decorations img {
+        /* Background images for transparent PNGs */
+        .left-decor,
+        .right-decor,
+        .bottom-decor {
             width: 120px;
-            opacity: 0.2;
+            height: 120px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.5;
         }
 
         .left-decor {
             position: absolute;
             top: 30%;
             left: 10px;
+            background-image: url('microphone.png');
             transform: rotate(-15deg);
         }
 
@@ -139,6 +147,7 @@
             position: absolute;
             top: 30%;
             right: 10px;
+            background-image: url('headphones.png');
             transform: rotate(15deg);
         }
 
@@ -146,7 +155,8 @@
             position: absolute;
             bottom: 10px;
             left: 50%;
-            transform: translateX(-50%) rotate(0deg);
+            background-image: url('mixing_console.png');
+            transform: translateX(-50%);
         }
 
         /* Responsive Design */
@@ -154,8 +164,9 @@
             .container {
                 width: 90%;
             }
-            .decorations img {
+            .left-decor, .right-decor, .bottom-decor {
                 width: 80px;
+                height: 80px;
             }
         }
     </style>
@@ -185,11 +196,11 @@
         <a href="home.html" class="back-link">Back to Home</a>
     </div>
 
-    <!-- Studio Equipment Decorations -->
+    <!-- Studio Equipment Decorations with Transparent Backgrounds -->
     <div class="decorations">
-        <img src="microphone.png" alt="Studio Microphone" class="left-decor">
-        <img src="headphones.png" alt="Studio Headphones" class="right-decor">
-        <img src="mixing_console.png" alt="Mixing Console" class="bottom-decor">
+        <div class="left-decor"></div>
+        <div class="right-decor"></div>
+        <div class="bottom-decor"></div>
     </div>
 
 </body>
