@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Mixedbydreazz</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
         body {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #fff;
             color: black;
             margin: 0;
@@ -83,9 +83,7 @@
             margin-bottom: 20px;
         }
 
-        /* Futuristic Font for Description */
         p {
-            font-family: 'Orbitron', sans-serif;
             font-size: 18px;
             color: #333;
             line-height: 1.8;
@@ -123,39 +121,28 @@
             pointer-events: none;
         }
 
-        /* Background images for transparent PNGs */
-        .left-decor,
-        .right-decor,
-        .bottom-decor {
+        /* Transparent Background Images - No Box */
+        .decorations img {
             width: 120px;
-            height: 120px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
             opacity: 0.5;
+            position: absolute;
         }
 
         .left-decor {
-            position: absolute;
             top: 30%;
             left: 10px;
-            background-image: url('microphone.png');
             transform: rotate(-15deg);
         }
 
         .right-decor {
-            position: absolute;
             top: 30%;
             right: 10px;
-            background-image: url('headphones.png');
             transform: rotate(15deg);
         }
 
         .bottom-decor {
-            position: absolute;
             bottom: 10px;
             left: 50%;
-            background-image: url('mixing_console.png');
             transform: translateX(-50%);
         }
 
@@ -164,9 +151,8 @@
             .container {
                 width: 90%;
             }
-            .left-decor, .right-decor, .bottom-decor {
+            .decorations img {
                 width: 80px;
-                height: 80px;
             }
         }
     </style>
@@ -175,7 +161,7 @@
 
     <nav>
         <a href="home.html">Home</a>
-        <a href="booknow.html">Book Now</a>
+        <a href="book.html">Book Now</a>
         <a href="upload.html">Upload Files</a>
         <a href="#" class="disabled">About</a>
     </nav>
@@ -196,11 +182,11 @@
         <a href="home.html" class="back-link">Back to Home</a>
     </div>
 
-    <!-- Studio Equipment Decorations with Transparent Backgrounds -->
+    <!-- Studio Equipment Decorations -->
     <div class="decorations">
-        <div class="left-decor"></div>
-        <div class="right-decor"></div>
-        <div class="bottom-decor"></div>
+        <img src="microphone.png" alt="Studio Microphone" class="left-decor">
+        <img src="headphones.png" alt="Studio Headphones" class="right-decor">
+        <img src="mixing_console.png" alt="Mixing Console" class="bottom-decor">
     </div>
 
 </body>
