@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Now - Soundtrack Mixer</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #1e1e1e;
             color: white;
             text-align: center;
             margin: 0;
             padding: 0;
         }
+
         nav {
             background-color: #ff6600;
             padding: 15px;
@@ -20,6 +23,7 @@
             justify-content: center;
             gap: 20px;
         }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -27,39 +31,99 @@
             font-weight: bold;
             transition: 0.3s;
         }
+
         nav a:hover {
             text-decoration: underline;
         }
+
         .container {
             margin: 50px auto;
-            max-width: 800px;
+            max-width: 900px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
         .package {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            margin: 10px;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(255, 102, 0, 0.2);
+            padding: 20px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
+
         .package:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(255, 102, 0, 0.4);
         }
-        a {
+
+        .package img {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .package a {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
             color: #ff6600;
             text-decoration: none;
-            font-weight: bold;
+            transition: 0.3s;
         }
-        a:hover {
+
+        .package a:hover {
+            color: #ff4500;
             text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #ff6600;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 2px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #ff4500;
+            border-bottom: 2px solid #ff4500;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
+
     <nav>
         <a href="home.html">Home</a>
         <a href="book.html">Book Now</a>
@@ -69,21 +133,36 @@
     <div class="container">
         <h1>Book Your Session</h1>
         <p>Select a package and schedule your appointment.</p>
-        <div class="package">
-            <a href="mix&master.html">Mix & Master</a>
+
+        <div class="packages">
+            <!-- Mix & Master Package -->
+            <div class="package" onclick="window.location.href='mix&master.html'">
+                <img src="IMG_8526.png" alt="Mix & Master">
+                <a href="mix&master.html">Mix & Master</a>
+            </div>
+
+            <!-- Mix Package -->
+            <div class="package" onclick="window.location.href='mix.html'">
+                <img src="IMG_7819.png" alt="Mix">
+                <a href="mix.html">Mix</a>
+            </div>
+
+            <!-- Master Package -->
+            <div class="package" onclick="window.location.href='master.html'">
+                <img src="IMG_7820.png" alt="Master">
+                <a href="master.html">Master</a>
+            </div>
+
+            <!-- Studio Session -->
+            <div class="package" onclick="window.location.href='studio.html'">
+                <img src="IMG_7818.png" alt="Studio Session">
+                <a href="studio.html">Studio Session</a>
+            </div>
         </div>
-        <div class="package">
-            <a href="mix.html">Mix</a>
-        </div>
-        <div class="package">
-            <a href="master.html">Master</a>
-        </div>
-        <div class="package">
-            <a href="studio.html">Studio Session</a>
-        </div>
-        <br>
-        <a href="home.html">Back to Home</a>
+
+        <a href="home.html" class="back-link">Back to Home</a>
     </div>
+
 </body>
 </html>
 
