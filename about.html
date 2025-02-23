@@ -21,7 +21,7 @@
             position: relative;
         }
 
-        /* Background Image Styling */
+        /* Background Image - Dark City Studio Effect */
         body::before {
             content: "";
             position: absolute;
@@ -29,9 +29,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('Add a heading.png') no-repeat center center/cover;
-            filter: brightness(0.2) grayscale(20%);
-            opacity: 0.7;
+            background: url('your-city-studio-image.jpg') no-repeat center center/cover;
+            filter: brightness(0.2) grayscale(30%);
+            opacity: 0.8;
             z-index: -1;
         }
 
@@ -70,15 +70,22 @@
             pointer-events: none;
         }
 
+        /* Floating Hover Effect on Description Box */
         .container {
             margin: 100px auto 50px;
             max-width: 800px;
             padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
             text-align: center;
-            backdrop-filter: blur(5px);
+            color: #000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
         }
 
         h1 {
@@ -91,7 +98,7 @@
 
         p {
             font-size: 16px;
-            color: #ddd;
+            color: #444;
             line-height: 1.6;
             margin-bottom: 20px;
         }
@@ -99,17 +106,17 @@
         .back-link {
             display: inline-block;
             margin-top: 20px;
-            color: white;
+            color: #000;
             font-weight: bold;
             text-decoration: none;
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid #000;
             padding-bottom: 2px;
             transition: 0.3s;
         }
 
         .back-link:hover {
-            color: #bbb;
-            border-bottom: 2px solid #bbb;
+            color: #444;
+            border-bottom: 2px solid #444;
         }
 
         /* Responsive Design */
@@ -124,22 +131,23 @@
 
     <nav>
         <a href="home.html">Home</a>
-        <a href="book.html">Book Now</a>
+        <a href="booknow.html">Book Now</a>
         <a href="upload.html">Upload Files</a>
         <a href="#" class="disabled">About</a>
     </nav>
     
     <div class="container">
         <h1>About Mixedbydreazz</h1>
-        <p>Welcome to <strong>Mixedbydreazz.com</strong>, where passion meets precision in music production.  
-           Music is an art form that evokes different emotions—some tracks feel perfect, while others lack that final touch.  
-           This is where the art of **mixing and mastering** becomes crucial. Many underestimate the intricate process behind refining a song to its fullest potential.</p>
+        <p>Welcome to <strong>Mixedbydreazz.com</strong>, where creativity meets precision in sound engineering.</p>
+        
+        <p>Music is an art form that evokes different emotions—some tracks feel complete, while others lack that final touch.  
+        This is where **mixing and mastering** come in, refining a song to its fullest potential.</p>
 
-        <p>With a deep understanding of sound engineering, I utilize cutting-edge technology and expertise to elevate your tracks.  
-           Whether it's fine-tuning frequencies, achieving balanced dynamics, or perfecting stereo imaging, my goal is to bring your music to industry-standard excellence.</p>
+        <p>With years of experience in sound engineering, I use cutting-edge tools and techniques to enhance every track.  
+        Whether it's balancing frequencies, refining dynamics, or optimizing stereo depth, my goal is to bring your sound to an **industry-standard level**.</p>
 
-        <p>My name is <strong>Andreazz</strong>, and I am a dedicated audio engineer and music producer.  
-           My mission is to provide **top-tier professional services** to artists, producers, and fellow engineers, ensuring that every project receives the quality it deserves.</p>
+        <p>My name is **Andreazz**, and I am a professional **audio engineer and music producer**.  
+        I provide **top-tier services** to artists, producers, and fellow engineers, ensuring that each project receives the care and quality it deserves.</p>
 
         <a href="home.html" class="back-link">Back to Home</a>
     </div>
