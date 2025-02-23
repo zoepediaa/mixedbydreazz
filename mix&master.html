@@ -17,15 +17,18 @@
             font-family: 'Orbitron', sans-serif;
             background-color: #000;
             color: #fff;
-            text-align: center;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
 
         .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
             margin: 50px auto;
-            max-width: 800px;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
@@ -33,16 +36,27 @@
             animation: fadeIn 1s ease-in-out;
         }
 
+        .image-section {
+            flex: 1;
+            text-align: center;
+        }
+
         .header-img {
-            width: 100%;
-            max-width: 600px;
+            width: 90%;
+            max-width: 500px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
             animation: pulse 2s infinite;
         }
 
+        .content-section {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+        }
+
         h1 {
-            font-size: 32px;
+            font-size: 36px;
             text-transform: uppercase;
             letter-spacing: 2px;
             background: linear-gradient(90deg, #0ff, #00f, #f0f);
@@ -120,32 +134,49 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .content-section {
+                text-align: center;
+            }
+        }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="IMG_8526.png" alt="Mix & Master Package" class="header-img">
-        
-        <h1>Mix & Master Package</h1>
-        <p class="description">Get your track professionally mixed and mastered with high-quality results at an affordable price.</p>
-        
-        <div class="package-details">
-            <p><strong>Includes:</strong></p>
-            <p>🎵 HQ Audio File • WAV • MP3</p>
-            <p>🎛️ Mixing & Mastering</p>
-            <p>🔄 Revisions: 1</p>
-            <p>⏳ Delivery Time:</p>
-            <p>[1 Song] • 2 - 3 Days</p>
-            <p>[5 Songs] • 2 - 5 Days</p>
-            <p>[10 Songs] • 2 - 7 Days</p>
-            <p>🚚 <strong>Delivery Policy:</strong> Sundays Excluded</p>
+        <!-- Left: Image Section -->
+        <div class="image-section">
+            <img src="IMG_0131.jpeg" alt="Mix & Master Package" class="header-img">
         </div>
 
-        <button onclick="window.location.href='https://buy.stripe.com/test_xyz123abc'" aria-label="Proceed to Payment">Pay Now - $100</button>
+        <!-- Right: Content Section -->
+        <div class="content-section">
+            <h1>Mix & Master Package</h1>
+            <p class="description">Get your track professionally mixed and mastered with high-quality results at an affordable price.</p>
+            
+            <div class="package-details">
+                <p><strong>What's included:</strong></p>
+                <p>🎵 HQ Audio File • WAV • MP3</p>
+                <p>🎛️ Mixing & Mastering</p>
+                <p>🔄 Revisions: 1</p>
+                <p>⏳ Delivery Time:</p>
+                <p>[1 Song] • 2 - 3 Days</p>
+                <p>[5 Songs] • 2 - 5 Days</p>
+                <p>[10 Songs] • 2 - 7 Days</p>
+                <p>🚚 <strong>Delivery Policy:</strong> Sundays Excluded</p>
+            </div>
 
-        <br><br>
-        <a href="booknow.html">Back to Booking</a>
+            <button onclick="window.location.href='https://buy.stripe.com/test_xyz123abc'" aria-label="Proceed to Payment">Pay Now - $100</button>
+
+            <br><br>
+            <a href="booknow.html">Back to Booking</a>
+        </div>
     </div>
 
 </body>
