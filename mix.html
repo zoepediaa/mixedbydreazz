@@ -9,11 +9,10 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fff;
+            background-color: #f8f8f8;
             color: #000;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,22 +20,35 @@
         }
 
         .container {
-            width: 100%;
-            max-width: 600px;
-            padding: 40px;
-            background: #f8f8f8;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            width: 90%;
+            background: #fff;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            gap: 40px;
+        }
+
+        .image-container {
+            flex: 1;
             text-align: center;
-            transition: 0.3s ease-in-out;
         }
 
         .header-img {
             width: 100%;
-            max-width: 500px;
+            max-width: 450px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
+        }
+
+        .info-container {
+            flex: 1;
+            text-align: left;
+            padding: 20px;
         }
 
         h1 {
@@ -47,20 +59,15 @@
         }
 
         p {
-            font-size: 16px;
+            font-size: 18px;
             color: #333;
             margin: 10px 0;
         }
 
         .package-details {
-            font-size: 16px;
-            margin: 20px 0;
-            color: #444;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
         }
 
         button {
@@ -69,7 +76,7 @@
             border: none;
             padding: 14px 30px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             text-transform: uppercase;
             border-radius: 8px;
@@ -99,45 +106,26 @@
             border-bottom: 2px solid #555;
         }
 
-        .upload-files {
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 20px;
-            color: #000;
-            text-decoration: none;
-            display: inline-block;
-            padding: 12px 20px;
-            background: #000;
-            color: #fff;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .upload-files:hover {
-            background: #333;
-            transform: scale(1.05);
-        }
-
-        /* FAQ Section */
-        .faq {
-            font-size: 14px;
-            color: #777;
-            margin-top: 40px;
-            text-align: left;
-            padding-top: 10px;
-            border-top: 1px solid #ccc;
-        }
-
-        .faq strong {
-            font-size: 16px;
-            color: #555;
-        }
-
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1024px) {
             .container {
-                width: 90%;
-                padding: 30px;
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .image-container, .info-container {
+                flex: none;
+                width: 100%;
+                text-align: center;
+            }
+
+            button {
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            button {
+                width: 100%;
             }
         }
     </style>
@@ -145,39 +133,35 @@
 <body>
 
     <div class="container">
-        <img src="IMG_7819.png" alt="Mix Package" class="header-img">
-
-        <h1>Mix Package</h1>
-        <p><strong>Price:</strong> $50</p>
-
-        <div class="package-details">
-            <p><strong>What's included?</strong></p>
-            <p>🎵 HQ Audio File • WAV • MP3</p>
-            <p>🎛️ Mixing & Mastering</p>
-            <p>🔄 Revisions: 1</p>
-            <p>⏳ Delivery Time:</p>
-            <p>[1 Song] • 2 - 3 Days</p>
-            <p>[5 Songs] • 2 - 5 Days</p>
-            <p>[10 Songs] • 2 - 7 Days</p>
-            <p>🚚 <strong>Delivery Policy:</strong> Sundays Excluded</p>
+        <div class="image-container">
+            <img src="IMG_7819.png" alt="Mix Package" class="header-img">
         </div>
-
-        <!-- Updated Payment Button with Stripe Link -->
-        <button onclick="window.location.href='https://buy.stripe.com/dR65kC5Fn3ZW21W5kl'" aria-label="Proceed to Payment">Pay Now - $50</button>
-
-        <br><br>
-
-        <a href="mailto:musicisthearpy08@gmail.com?subject=Mix Package Files&body=Attach your tracked out song files here." class="upload-files">Upload Files Here</a>
-
-        <br>
-        <a href="booknow.html">Back to Booking</a>
-
-        <div class="faq">
-            <strong>FAQ</strong>
-            <p>What DAW can I send you stems from?</p>
-            <p>🎵 Pro Tools, FL Studio, Cubase, Garageband, Reaper, Adobe Audition, Cake Walk, Band Lab, Mix Craft, Studio One, Logic Pro X, Ableton</p>
+        <div class="info-container">
+            <h1>Mix Package</h1>
+            <p><strong>Price:</strong> $50</p>
+            <div class="package-details">
+                <p><strong>What's Included?</strong></p>
+                <ul>
+                    <li>🎵 HQ Audio File - WAV & MP3</li>
+                    <li>🎛️ Mixing</li>
+                    <li>🔄 Revisions: 1</li>
+                    <li>⏳ Delivery Time:</li>
+                    <ul>
+                        <li>1 Song: 2-3 Days</li>
+                        <li>5 Songs: 2-5 Days</li>
+                        <li>10 Songs: 2-7 Days</li>
+                    </ul>
+                    <li>🚨 <strong>Delivery Policy:</strong> Sundays Excluded</li>
+                </ul>
+            </div>
+            <button onclick="window.location.href='https://buy.stripe.com/dR65kC5Fn3ZW21W5kl'">Pay Now - $50</button>
+            <br><br>
+            <a href="mailto:musicisthearpy08@gmail.com?subject=Mix Package Files&body=Attach your tracked out song files here." class="upload-files">Upload Files Here</a>
+            <br>
+            <a href="booknow.html">Back to Booking</a>
         </div>
     </div>
 
 </body>
 </html>
+
