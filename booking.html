@@ -57,7 +57,7 @@
             color: #555;
         }
 
-        input {
+        input, select {
             width: 100%;
             padding: 12px;
             margin: 5px 0;
@@ -69,7 +69,7 @@
             transition: 0.3s ease;
         }
 
-        input:focus {
+        input:focus, select:focus {
             border: 1px solid #000;
             outline: none;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -150,12 +150,20 @@
             <input type="date" id="date" required>
 
             <label for="time">Select Time:</label>
-            <input type="time" id="time" required>
+            <select id="time" required>
+                <option value="" disabled selected>Select a time</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="2:00 PM">2:00 PM</option>
+                <option value="4:00 PM">4:00 PM</option>
+                <option value="6:00 PM">6:00 PM</option>
+                <option value="8:00 PM">8:00 PM</option>
+            </select>
 
             <button type="submit">Confirm Booking</button>
         </form>
 
-        <!-- Confirmation Message (Hidden by Default) -->
+        <!-- Confirmation Message -->
         <p id="confirmationMessage" class="confirmation-message">Your booking has been confirmed! 🎉</p>
 
         <br>
@@ -213,7 +221,7 @@
 
         function goHome(event) {
             event.preventDefault();
-            window.location.href = "home.html"; // Ensure this matches your actual home page URL
+            window.location.href = "home.html"; 
         }
     </script>
 
