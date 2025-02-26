@@ -74,11 +74,11 @@
         }
 
         .packages {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             width: 100%;
+            justify-content: center;
         }
 
         .package {
@@ -89,8 +89,8 @@
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            flex: 1 1 calc(50% - 40px); /* Two items per row */
             max-width: 300px;
+            margin: 0 auto;
         }
 
         .package:hover {
@@ -137,8 +137,8 @@
         }
 
         @media screen and (max-width: 768px) {
-            .package {
-                flex: 1 1 100%; /* One per row on mobile */
+            .packages {
+                grid-template-columns: 1fr;
             }
         }
     </style>
