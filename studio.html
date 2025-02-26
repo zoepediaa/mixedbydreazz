@@ -22,26 +22,35 @@
         }
 
         .container {
-            width: 100%;
-            max-width: 1200px;
-            height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex-direction: row;
             align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            width: 90%;
+            height: 80vh;
             background: #f8f8f8;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
             padding: 40px;
+            gap: 40px;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
         }
 
         .header-img {
             width: 100%;
-            max-width: 700px;
+            max-width: 500px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
+        }
+
+        .info-container {
+            flex: 1;
+            text-align: left;
         }
 
         h1 {
@@ -68,7 +77,7 @@
             text-transform: uppercase;
             border-radius: 8px;
             transition: all 0.3s ease;
-            width: 50%;
+            width: 100%;
             margin-top: 20px;
         }
 
@@ -96,19 +105,23 @@
         /* Responsive Design */
         @media screen and (max-width: 1024px) {
             .container {
-                width: 90%;
-                padding: 30px;
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
             }
+
+            .image-container, .info-container {
+                flex: none;
+                width: 100%;
+                text-align: center;
+            }
+
             button {
                 width: 80%;
             }
         }
 
         @media screen and (max-width: 768px) {
-            .container {
-                width: 95%;
-                padding: 20px;
-            }
             button {
                 width: 100%;
             }
@@ -118,21 +131,20 @@
 <body>
 
     <div class="container">
-        <img src="IMG_7818.png" alt="Studio Session" class="header-img">
+        <div class="image-container">
+            <img src="IMG_7818.png" alt="Studio Session" class="header-img">
+        </div>
+        <div class="info-container">
+            <h1>Studio Session</h1>
+            <p>3 Hour studio session for recording vocals in a recording studio. Record your best sound with high-quality equipment, with mixedbydreazz engineering.</p>
+            <p><strong>Price:</strong> $100 / 3 hours</p>
 
-        <h1>Studio Session</h1>
-        <p>3 Hour studio session for recording vocals in a recording studio. Record your best sound with high-quality equipment, with mixedbydreazz engineering.</p>
-        <p><strong>Price:</strong> $100 / 3 hours</p>
-
-        <button onclick="window.location.href='booking.html'" aria-label="Book an appointment">Book Appointment</button>
-
-        <br><br>
-
-        <!-- Updated Payment Button with Stripe Link -->
-        <button onclick="window.location.href='https://buy.stripe.com/00g4gyaZH3ZW8qk7sv'" aria-label="Proceed to Payment">Pay Now - $100</button>
-
-        <br>
-        <a href="booknow.html">Back to Booking</a>
+            <button onclick="window.location.href='booking.html'" aria-label="Book an appointment">Book Appointment</button>
+            <br><br>
+            <button onclick="window.location.href='https://buy.stripe.com/00g4gyaZH3ZW8qk7sv'" aria-label="Proceed to Payment">Pay Now - $100</button>
+            <br>
+            <a href="booknow.html">Back to Booking</a>
+        </div>
     </div>
 
 </body>
