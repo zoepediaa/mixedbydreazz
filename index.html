@@ -3,54 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soundtrack Mixer</title>
+    <title>Home - Mixedbydreazz</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #000;
             margin: 0;
             padding: 0;
-            background-color: #1e1e1e;
-            color: white;
-        }
-        nav {
-            background-color: #ff6600;
-            padding: 15px;
+            overflow-x: hidden;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            position: relative;
         }
+
+        /* Modern Navigation Bar */
+        nav {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
-            transition: 0.3s;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: 0.3s ease;
         }
+
         nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            margin: 50px auto;
-            max-width: 800px;
-            padding: 20px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a.disabled {
+            color: #aaa;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .container {
+            margin: 120px auto 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 50px;
+            margin-top: -30px; /* Move text slightly up */
+        }
+
+        /* Large White Floating Rectangle with Sharp Edges */
+        .floating-box {
+            width: 800px;
+            height: 400px;
+            background: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            transition: transform 0.5s ease-in-out;
+            animation: float 2.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateX(-40px);
+            }
+            100% {
+                transform: translateX(40px);
+            }
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .floating-box {
+                width: 90%;
+                height: 250px;
+            }
+
+            h1 {
+                font-size: 32px;
+                margin-top: -10px;
+            }
         }
     </style>
 </head>
 <body>
+
     <nav>
-        <a href="index.html">Home</a>
+        <a href="#" class="disabled">Home</a>
         <a href="booknow.html">Book Now</a>
         <a href="upload.html">Upload Files</a>
+        <a href="about.html">About</a>
     </nav>
-
+    
     <div class="container">
-        <h1>Welcome to Soundtrack Mixer</h1>
-        <p>Professional Mixing & Mastering Services</p>
-        <a href="booknow.html">Book a Session</a> | <a href="upload.html">Upload Your Tracks</a>
+        <h1>Welcome to Mixedbydreazz</h1>
+        
+        <!-- Large White Floating Rectangle -->
+        <div class="floating-box"></div>
+        <!-- Replace with actual image by setting the background-image property in CSS -->
     </div>
+
 </body>
 </html>
