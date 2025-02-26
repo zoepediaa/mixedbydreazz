@@ -9,16 +9,14 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fff;
+            background-color: #f8f8f8;
             color: #000;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            width: 100vw;
+            min-height: 100vh;
         }
 
         .container {
@@ -28,8 +26,7 @@
             justify-content: center;
             max-width: 1200px;
             width: 90%;
-            height: 80vh;
-            background: #f8f8f8;
+            background: #fff;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 40px;
@@ -43,7 +40,7 @@
 
         .header-img {
             width: 100%;
-            max-width: 500px;
+            max-width: 450px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
@@ -55,7 +52,7 @@
         }
 
         h1 {
-            font-size: 42px;
+            font-size: 32px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -65,6 +62,12 @@
             font-size: 18px;
             color: #333;
             margin: 10px 0;
+        }
+
+        .package-details {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
         }
 
         button {
@@ -107,7 +110,6 @@
         @media screen and (max-width: 1024px) {
             .container {
                 flex-direction: column;
-                height: auto;
                 padding: 20px;
             }
 
@@ -139,10 +141,19 @@
             <h1>Studio Session</h1>
             <p>3 Hour studio session for recording vocals in a recording studio. Record your best sound with high-quality equipment, with mixedbydreazz engineering.</p>
             <p><strong>Price:</strong> $100 / 3 hours</p>
-
-            <button onclick="window.location.href='booking.html'" aria-label="Book an appointment">Book Appointment</button>
+            <div class="package-details">
+                <p><strong>What’s Included:</strong></p>
+                <ul>
+                    <li>🎤 Professional recording studio setup</li>
+                    <li>🎚️ High-quality sound engineering</li>
+                    <li>🔄 1 revision included</li>
+                    <li>⏳ Booking duration: 3 hours</li>
+                    <li>🚨 <strong>Delivery Policy:</strong> Sundays Excluded</li>
+                </ul>
+            </div>
+            <button onclick="window.location.href='booking.html'">Book Appointment</button>
             <br><br>
-            <button onclick="window.location.href='https://buy.stripe.com/00g4gyaZH3ZW8qk7sv'" aria-label="Proceed to Payment">Pay Now - $100</button>
+            <button onclick="window.location.href='https://buy.stripe.com/00g4gyaZH3ZW8qk7sv'">Pay Now - $100</button>
             <br>
             <a href="booknow.html">Back to Booking</a>
         </div>
@@ -150,3 +161,4 @@
 
 </body>
 </html>
+
