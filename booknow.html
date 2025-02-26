@@ -18,6 +18,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            flex-direction: column;
         }
 
         /* Modern Navigation Bar */
@@ -56,7 +57,7 @@
 
         .container {
             margin: 100px auto 50px;
-            max-width: 900px;
+            max-width: 90%;
             padding: 20px;
             text-align: center;
         }
@@ -73,12 +74,13 @@
             margin-bottom: 30px;
         }
 
-        /* Package Grid */
+        /* Package Flexbox Layout */
         .packages {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
             gap: 20px;
-            justify-content: center;
+            width: 100%;
         }
 
         /* Floating Package Cards */
@@ -90,6 +92,8 @@
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            flex: 1;
+            max-width: 300px;
         }
 
         .package:hover {
@@ -136,9 +140,15 @@
         }
 
         /* Responsive Design */
+        @media screen and (max-width: 1024px) {
+            .package {
+                flex: 1 1 45%; /* Two per row on tablets */
+            }
+        }
+
         @media screen and (max-width: 768px) {
-            .container {
-                width: 90%;
+            .package {
+                flex: 1 1 100%; /* One per row on mobile */
             }
         }
     </style>
@@ -157,25 +167,21 @@
         <p>Select a package and schedule your appointment.</p>
 
         <div class="packages">
-            <!-- Mix & Master Package -->
             <div class="package" onclick="window.location.href='mix&master.html'">
                 <img src="IMG_8526.png" alt="Mix & Master">
                 <a href="mix&master.html">Mix & Master</a>
             </div>
 
-            <!-- Mix Package -->
             <div class="package" onclick="window.location.href='mix.html'">
                 <img src="IMG_7819.png" alt="Mix">
                 <a href="mix.html">Mix</a>
             </div>
 
-            <!-- Master Package -->
             <div class="package" onclick="window.location.href='master.html'">
                 <img src="IMG_7820.png" alt="Master">
                 <a href="master.html">Master</a>
             </div>
 
-            <!-- Studio Session -->
             <div class="package" onclick="window.location.href='studio.html'">
                 <img src="IMG_7818.png" alt="Studio Session">
                 <a href="studio.html">Studio Session</a>
