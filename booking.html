@@ -57,7 +57,7 @@
             color: #555;
         }
 
-        input, select {
+        input {
             width: 100%;
             padding: 12px;
             margin: 5px 0;
@@ -69,7 +69,7 @@
             transition: 0.3s ease;
         }
 
-        input:focus, select:focus {
+        input:focus {
             border: 1px solid #000;
             outline: none;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -103,7 +103,6 @@
             color: #008000;
         }
 
-        /* Back to Home Button */
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -121,7 +120,6 @@
             border-bottom: 2px solid #555;
         }
 
-        /* Responsive Design */
         @media screen and (max-width: 768px) {
             .container {
                 width: 90%;
@@ -150,20 +148,11 @@
             <input type="date" id="date" required>
 
             <label for="time">Select Time:</label>
-            <select id="time" required>
-                <option value="" disabled selected>Select a time</option>
-                <option value="10:00 AM">10:00 AM</option>
-                <option value="12:00 PM">12:00 PM</option>
-                <option value="2:00 PM">2:00 PM</option>
-                <option value="4:00 PM">4:00 PM</option>
-                <option value="6:00 PM">6:00 PM</option>
-                <option value="8:00 PM">8:00 PM</option>
-            </select>
+            <input type="time" id="time" required>
 
             <button type="submit">Confirm Booking</button>
         </form>
 
-        <!-- Confirmation Message -->
         <p id="confirmationMessage" class="confirmation-message">Your booking has been confirmed! 🎉</p>
 
         <br>
@@ -171,9 +160,12 @@
     </div>
 
     <script>
-        (function() {
-            emailjs.init("8OzY5TBiF3Ri3dxq6"); // Replace with your EmailJS Public Key
-        })();
+        function formatTime(time) {
+            let [hours, minutes] = time.split(":");
+            let suffix = hours >= 12 ? "PM" : "AM";
+            hours = ((hours % 12) || 12).toString();
+            return `${hours}:${minutes} ${suffix}`;
+        }
 
         document.getElementById("bookingForm").addEventListener("submit", function(event) {
             event.preventDefault();
@@ -181,42 +173,9 @@
             let name = document.getElementById("name").value;
             let email = document.getElementById("email").value;
             let date = document.getElementById("date").value;
-            let time = document.getElementById("time").value;
+            let time = formatTime(document.getElementById("time").value);
 
-            if (!name || !email || !date || !time) {
-                alert("Please fill out all fields.");
-                return;
-            }
-
-            // Email Data
-            let templateParams = {
-                user_name: name,
-                user_email: email,
-                appointment_date: date,
-                appointment_time: time
-            };
-
-            // Send Confirmation Email to Customer
-            emailjs.send("service_jzga3ph", "template_gq6i4ik", templateParams)
-                .then(function(response) {
-                    console.log("Customer Email Sent Successfully", response);
-                }, function(error) {
-                    console.error("Error sending customer email:", error);
-                });
-
-            // Send Email to Admin
-            emailjs.send("service_jzga3ph", "template_u8qq4l8", templateParams)
-                .then(function(response) {
-                    console.log("Admin Email Sent Successfully", response);
-                }, function(error) {
-                    console.error("Error sending admin email:", error);
-                });
-
-            // Show Confirmation Message
-            document.getElementById("confirmationMessage").style.display = "block";
-
-            // Clear Form Fields
-            document.getElementById("bookingForm").reset();
+            alert(`Booking Confirmed!\nName: ${name}\nEmail: ${email}\nDate: ${date}\nTime: ${time}`);
         });
 
         function goHome(event) {
