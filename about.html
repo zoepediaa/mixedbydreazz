@@ -106,53 +106,10 @@
             border-bottom: 2px solid #444;
         }
 
-        /* Studio Equipment Decorations */
-        .decorations {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            pointer-events: none;
-        }
-
-        /* Transparent Background Images - No Box */
-        .decorations img {
-            width: 120px;
-            opacity: 0.5;
-            position: absolute;
-        }
-
-        .left-decor {
-            top: 30%;
-            left: 10px;
-            transform: rotate(-15deg);
-        }
-
-        .right-decor {
-            top: 30%;
-            right: 10px;
-            transform: rotate(15deg);
-        }
-
-        .bottom-decor {
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
         /* Responsive Design */
         @media screen and (max-width: 768px) {
             .container {
                 width: 90%;
-            }
-            .decorations img {
-                width: 80px;
             }
         }
     </style>
@@ -182,12 +139,6 @@
         <a href="home.html" class="back-link">Back to Home</a>
     </div>
 
-    <!-- Studio Equipment Decorations -->
-    <div class="decorations">
-        <img src="microphone.png" alt="Studio Microphone" class="left-decor">
-        <img src="headphones.png" alt="Studio Headphones" class="right-decor">
-        <img src="mixing_console.png" alt="Mixing Console" class="bottom-decor">
-    </div>
-
 </body>
 </html>
+
