@@ -21,7 +21,6 @@
             flex-direction: column;
         }
 
-        /* Modern Navigation Bar */
         nav {
             background: #000;
             display: flex;
@@ -74,16 +73,14 @@
             margin-bottom: 30px;
         }
 
-        /* Package Flexbox Layout */
         .packages {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
             gap: 20px;
             width: 100%;
         }
 
-        /* Floating Package Cards */
         .package {
             background: #fff;
             border-radius: 12px;
@@ -92,7 +89,7 @@
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            flex: 1;
+            flex: 1 1 calc(50% - 40px); /* Two items per row */
             max-width: 300px;
         }
 
@@ -137,13 +134,6 @@
         .back-link:hover {
             color: #444;
             border-bottom: 2px solid #444;
-        }
-
-        /* Responsive Design */
-        @media screen and (max-width: 1024px) {
-            .package {
-                flex: 1 1 45%; /* Two per row on tablets */
-            }
         }
 
         @media screen and (max-width: 768px) {
