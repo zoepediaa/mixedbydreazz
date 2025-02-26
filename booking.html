@@ -160,6 +160,10 @@
     </div>
 
     <script>
+        (function() {
+            emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
+        })();
+
         function formatTime(time) {
             let [hours, minutes] = time.split(":");
             let suffix = hours >= 12 ? "PM" : "AM";
@@ -175,7 +179,22 @@
             let date = document.getElementById("date").value;
             let time = formatTime(document.getElementById("time").value);
 
-            alert(`Booking Confirmed!\nName: ${name}\nEmail: ${email}\nDate: ${date}\nTime: ${time}`);
+            let templateParams = {
+                user_name: name,
+                user_email: email,
+                appointment_date: date,
+                appointment_time: time
+            };
+
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+                .then(function(response) {
+                    console.log("Email Sent Successfully", response);
+                }, function(error) {
+                    console.error("Error sending email:", error);
+                });
+
+            document.getElementById("confirmationMessage").style.display = "block";
+            document.getElementById("bookingForm").reset();
         });
 
         function goHome(event) {
